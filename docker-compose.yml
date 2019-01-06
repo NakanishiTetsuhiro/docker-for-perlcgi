@@ -1,12 +1,9 @@
 version: '3'
 services:
     web:
-        container_name: web_cgi
         build:
-            context: ./web_cgi
-
+            context: ./web
         volumes:
-            - ./html:/var/www
-            - ./log/web:/var/log/nginx/web
+            - ./html/cgi-bin:/usr/local/apache2/cgi-bin
         ports:
             - "8080:80"
